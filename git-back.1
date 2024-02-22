@@ -1,0 +1,39 @@
+.TH GIT-BACK 1 "22 February 2024" "v1.0" "Git-Back Manual"
+
+.SH NAME
+git-back \- Quick snapshots of the git workspace
+
+.SH SYNOPSIS
+.B git-back
+.\" [\fIOPTION\fR]... \fIARGUMENT\fR...
+
+.SH DESCRIPTION
+git-back creates a quick snapshot of the git workspace (encompassing the working 
+directory and commit index) which can be quickly restored later on, while leaving the 
+workspace seemingly untouched*. 
+
+git-back may be an alias to a script and therefore not work with commands like "which", 
+but can be copied into /bin/ or /usr/bin/. It is also recommended to add git-back as as an 
+alias in your global .gitconfig: 
+
+[alias]
+	back = !/bin/bash "$HOME/.brunt-dotfiles/scripts/git-back.sh"
+
+.\" .SH OPTIONS
+.\" .TP
+.\" .B \-h, \-\-help
+.\" Display help message.
+
+.\" .TP
+.\" .B \-v, \-\-version
+.\" Display version information.
+
+.SH BUGS
+Running git-back will bring all items in the commit index back into 
+the working directory. 
+
+.SH AUTHOR
+https://github.com/jbrunton4
+
+.SH COPYRIGHT
+Released under the MIT License
